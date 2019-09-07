@@ -315,9 +315,21 @@ FrontEndElement Button(const std::string& label_string) {
             .ColorTheme("default");
 }
 
+FrontEndElement HTabs(vector<FrontEndElement>&& input) {
+  auto output = FrontEndElement(FrontEndElement::HORIZONTAL_TABS);
+  output.children = input;
+  return output;
+}
+
+FrontEndElement VTabs(vector<FrontEndElement>&& input) {
+  auto output = FrontEndElement(FrontEndElement::VERTICAL_TABS);
+  output.children = input;
+  return output;
+}
 
 FrontEndElement Image(const std::string& src) {
   return FrontEndElement(FrontEndElement::IMAGE).Src(src);
 }
+
 
 } // namespace webio

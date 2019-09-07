@@ -3,7 +3,6 @@
 
 int main() {
   using namespace webio;
-  webio::kDebugMode = true;
   class MyWebsite: public webio::BaseInterface {
     int num_additional_bottom_text = 0;
     int count = 0;
@@ -23,6 +22,7 @@ int main() {
         Text("Last Part ")
       });
       frame << TextInput("Your Last Name ?");
+      frame << Text("Second Last Saini Mohit<b>Super Bold</b> \n and a new line \n\n haha ");
       frame << Text("Saini Mohit");
       for(int i = 0; i < num_additional_bottom_text; i++) {
         frame << Text("--- In the Updated Middle And Updated Saini Mohit");

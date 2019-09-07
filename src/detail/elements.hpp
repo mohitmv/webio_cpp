@@ -282,10 +282,11 @@ FrontEndElement Text(const std::string& text_string);
 FrontEndElement Text(const std::vector<FrontEndElement>& inputs);
 FrontEndElement HTabs();
 FrontEndElement VTabs();
+FrontEndElement HTabs(vector<FrontEndElement>&& input);
+FrontEndElement VTabs(vector<FrontEndElement>&& input);
 FrontEndElement Tab(const std::string& text_string);
 FrontEndElement Button(const std::string& label_string);
 FrontEndElement Image(const std::string& src);
-
 
 
 
