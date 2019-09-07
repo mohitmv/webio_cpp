@@ -43,7 +43,7 @@ struct HttpHeader {
 }
 
 void HttpServer::Run(int port) {
-  int server_fd, new_socket, valread;
+  int server_fd, new_socket;
   struct sockaddr_in address;
   int opt = 1;
   int addrlen = sizeof(address);
@@ -82,7 +82,6 @@ void HttpServer::Run(int port) {
         exit(EXIT_FAILURE); 
     }
     count++;
-    char buffer[1024] = {0};
     char c;
     bool got_new_line = false;
     std::ostringstream oss;
