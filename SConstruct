@@ -12,11 +12,14 @@ variables.Add(SCons.Variables.EnumVariable(
 
 args = Environment(variables = variables);
 
-prod_checks = " -Wno-unused-function  -Wno-unused-parameter -Wno-unused-local-typedefs -Werror "
+prod_checks = " -Wno-unused-function  -Wno-unused-parameter -Wno-unused-local-typedefs "
+dev_checks = " -Wall -Wextra -Wno-sign-compare -fno-omit-frame-pointer -Wnon-virtual-dtor -mpopcnt -msse4.2 -g3 -Woverloaded-virtual -Wno-char-subscripts -Werror=deprecated-declarations -Wa,--compress-debug-sections -fdiagnostics-color=always -Iinclude "
+
+dev_checks = " -Wall -Wextra -Wno-sign-compare -fno-omit-frame-pointer -Wnon-virtual-dtor -mpopcnt -msse4.2 -Woverloaded-virtual -Wno-char-subscripts -Werror=deprecated-declarations -Wa,--compress-debug-sections -fdiagnostics-color=always -Iinclude "
 
 gcc_env = dict();
 gcc_env["CXX"] = "g++"
-gcc_env["CCFLAGS"] = " -fdiagnostics-color=always -Iinclude"
+gcc_env["CCFLAGS"] = dev_checks
 if (args["env"] == "ts"):
   gcc_env["CCFLAGS"] += " --std=c++11";
 elif args["env"] == "laptop":

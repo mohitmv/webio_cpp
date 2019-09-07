@@ -202,6 +202,7 @@ public:
 };
 
 class JsonArray final : public Value<Json::ARRAY, Json::array> {
+    using JsonValue::operator[];
     const Json::array &array_items() const override { return m_value; }
     const Json & operator[](size_t i) const override;
 public:
@@ -210,6 +211,7 @@ public:
 };
 
 class JsonObject final : public Value<Json::OBJECT, Json::object> {
+    using JsonValue::operator[];
     const Json::object &object_items() const override { return m_value; }
     const Json & operator[](const string &key) const override;
 public:
