@@ -113,7 +113,9 @@
                     .replace(/'/g, '&#39;')
                     .replace(/</g, '&lt;')
                     .replace(/>/g, '&gt;')
-                    .replace(/\n/g, '<br>');
+                    .replace(/\n/g, '<br>')
+                    .replace(/  /g, '&nbsp;')
+                    .replace(/\t/g, '&nbsp;');
       };
 
       var get_text_io_helper = function(design_object) {

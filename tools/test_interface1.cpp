@@ -23,6 +23,7 @@ int main() {
       });
       frame << TextInput("Your Last Name ?");
       frame << Text("Second Last Saini Mohit<b>Super Bold</b> \n and a new line \n\n haha ");
+      frame << Text("info{\n  Mohit\n\tSaini\n}\n\nColor {\n  red = green;\n  blue = red;\n}\n\n");
       frame << Text("Saini Mohit");
       for(int i = 0; i < num_additional_bottom_text; i++) {
         frame << Text("--- In the Updated Middle And Updated Saini Mohit");
